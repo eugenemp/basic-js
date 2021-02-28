@@ -1,8 +1,6 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function repeater(str, options) {
-  //Convert str to string type also if null is passed
-  str = (str === null) ? 'null' : str.toString();
 
   let result = [];
   //Check options arguments for specific cases
@@ -14,7 +12,7 @@ module.exports = function repeater(str, options) {
                     options.addition || '';
 
   let addRepTimes = options.additionRepeatTimes || 1;
-  let addSeparator = options.additionSeparator || '';
+  let addSeparator = options.additionSeparator || '|';
   //If more than one "addition" passed repeat it with additionSeparator inserted
   if(addRepTimes > 1) {
     let arr = [];
